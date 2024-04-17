@@ -65,14 +65,21 @@ function update(source) {
 
   nodeEnter.append('a')
       .attr("target", "_blank")
-      .attr('xlink:href', function(d) { return d.url; })
+      .attr('xlink:href', function(d) { 
+        if (d.url) return d.url;
+        else return "#";
+      })
       .append("svg:text")
       .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
       .attr("dy", ".35em")
       .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
       .text(function(d) { return d.name; })
       .style("fill: rgb(0, 0, 0)", function(d) { return d.free ? 'black' : '#999'; })
-      .style("fill-opacity", 1e-6);
+      .style("fill-opacity", 1e-6)
+      .attr('class', function(d) {
+        if (d.type === 'command') return "command"
+        else return ""
+      });
 
   nodeEnter.append("svg:title")
     .text(function(d) {
@@ -149,3 +156,13 @@ function toggle(d) {
     d._children = null;
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  var commands = document.getElementsByClassName("command");
+
+  commands.addEventListener('click', function() {
+    console.log(this);
+    navigator.clipboard.writeText(this.text);
+  });
+
+})

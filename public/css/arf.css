@@ -46,3 +46,8 @@ path.link {
   stroke: #ccc;
   stroke-width: 1px;
 }
+
+.command {
+  pointer-events: none;
+  font-family: 'Courier New', Courier, monospace;
+}
