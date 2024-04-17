@@ -5,7 +5,72 @@
     {
       "name": "Windows",
       "type": "folder",
-      "children": []
+      "children": [
+        {
+          "name": "Memory",
+          "type": "folder",
+          "children": [
+            {
+              "name": "Analysis",
+              "type": "folder",
+              "children": [
+                {
+                  "name": "Tools",
+                  "type": "folder",
+                  "children": [
+                    {
+                      "name": "Volatility2",
+                      "type": "url",
+                      "url": "https://github.com/volatilityfoundation/volatility"
+                    },
+                    {
+                      "name": "Volatility3",
+                      "type": "url",
+                      "url": "https://github.com/volatilityfoundation/volatility3"
+                    },
+                    {
+                      "name": "MemProcFS",
+                      "type": "url",
+                      "url": "https://github.com/ufrisk/MemProcFS"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Acquisition",
+              "type": "folder",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Storage",
+          "type": "folder",
+          "children": [
+            {
+              "name": "Event Logs (evtx)",
+              "type": "folder",
+              "children": []
+            },
+            {
+              "name": "Services",
+              "type": "folder",
+              "children": []
+            },
+            {
+              "name": "Prefetch",
+              "type": "folder",
+              "children": []
+            },
+            {
+              "name": "Registry",
+              "type": "folder",
+              "children": []
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Android",
